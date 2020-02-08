@@ -1,4 +1,4 @@
-const app = require('./app.js');
+const app = require('./server/app.js');
 
 if (process.env.NODE_ENV === 'development') {
   require('dotenv').config();
