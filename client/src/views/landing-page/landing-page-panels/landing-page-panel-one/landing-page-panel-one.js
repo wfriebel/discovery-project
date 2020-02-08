@@ -5,14 +5,6 @@ import { HEADER, SUB_HEADER, CALL_TO_ACTION } from "./constants";
 import { Button, TYPE, SIZE } from "../../../../components/button";
 
 const LandingPagePanelOne = () => {
-  React.useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('/api/');
-      const data = await response.json();
-      console.log('data', data)
-    }
-    fetchData();
-  })
   const [useCss] = useStyletron();
   return (
     <div

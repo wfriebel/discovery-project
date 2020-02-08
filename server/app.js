@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
+const GraphQLSchema = require('./graphql');
+const apolloServer = require('./graphql');
 
 app.use(express.static('../client/public/src'));
 
-app.get('/api/', (req, res) => {
-  res.send({ name: 'Will' });
-});
+apolloServer.applyMiddleware({ app, path: '/graphql' });
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
